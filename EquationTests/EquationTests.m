@@ -184,7 +184,7 @@ Equation* e;
 // x^2 - 4 = 0 をテスト
 // b=0 の場合。
 - (void)test9
-{ 
+{
     e = [[Equation alloc] initWithA:1 b:0 c:-4];
     
     STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
