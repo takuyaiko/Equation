@@ -169,18 +169,29 @@ Equation* e;
 }
 
 /*課題３*/
-// x^2 - (5+3i)x + 15i = 0 をテスト
-// 実数解と虚数解 の場合。
+// x - 5 = 0 をテスト
+// a=0 の場合。
 - (void)test8
-{
-    e = [[Equation alloc] initWithA:1 b:-5-3i c:15i];
+{                              
+    e = [[Equation alloc] initWithA:0 b:1 c:-5];
     
     STAssertEqualsWithAccuracy(5.0, [e real1], 0.00001, @"real1 error");
     STAssertEqualsWithAccuracy(0.0, [e real2], 0.00001, @"real2 error");
     STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
-    STAssertEqualsWithAccuracy(3.0, [e imaginary2], 0.00001, @"imaginary2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
+// x^2 - 4 = 0 をテスト
+// b=0 の場合。
+- (void)test9
+{
+    e = [[Equation alloc] initWithA:1 b:0 c:-4];
+    
+    STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-2.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
 
 
 @end
